@@ -1,11 +1,9 @@
 #Coge to circular plot 
 
-cd /netscratch/dep_mercier/grp_novikova/Neobatrachus/Jozefien_scratch/CoGe_analysis
-#Step 1: change Coge into synteny blocks
 #######################################
 
 
-file='/netscratch/dep_mercier/grp_novikova/Neobatrachus/Jozefien_scratch/CoGe_analysis/52485_59218.CDS-CDS.last.tdd10.cs0.filtered.dag.all.go_D20_g10_A5.aligncoords.gcoords.ks.txt' # what we downloaded from coge
+file='/path/to/coge_outputfile' # what we downloaded from coge
 #file is from "	Results with synonymous/non-synonymous rate values" in download section of synmap
 grep -v "##" $file > t
 grep -v "#This" t > t2
@@ -25,11 +23,9 @@ wc -l x.starts;wc -l x.ends
 tail -1 $file
 
 
-#copy and paste the last line into x.ends --> or do this in R manually like I did
+#copy and paste the last line into x.ends 
+
 #now x.starts and x.ends are the same length
 #lets cbind them in R
 
 
-
-R
-library(dplyr)
