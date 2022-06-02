@@ -15,3 +15,5 @@ mystart_ends_blocks$newMN47_chr=gsub("a62989_", "newMN47_", mystart_ends_blocks$
 mystart_ends_blocks$newMN47_chr=gsub("scafold", "scaffold", mystart_ends_blocks$newMN47_chr)
 write.table(mystart_ends_blocks, file='synteny.newMN47_newNT1_nonmerge.txt', col.names=T, row.names=F, quote=F, sep='\t') #save as a new table, containg all colinear and inversed regions between the two assemblies
 
+#########################
+#now do this for each combination of assemblies
