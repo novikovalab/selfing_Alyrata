@@ -1,0 +1,21 @@
+//Priors and rules file
+//*********************
+[PARAMETERS]
+//#IsInt? #name #dist. #min #max
+//All N are in haploid individuals
+1       TWO_NE_PRESENT_POP1  logunif 100 1e6
+1       TWO_NE_PRESENT_POP2  logunif 100 1e6
+1	T_SPL	logunif	500	100000	output	bounded
+0       RESIZE_ANC      unif    0.01       10       output bounded
+0	SCALE_T_BOT	unif	0.001	1	hide	bounded
+0	SEVERITY_BOT	unif	0.001	10	output	bounded
+0  migr12      logunif  1e-10 0.5   output bounded
+0  migr21      logunif  1e-10 0.5   output bounded
+[RULES]
+[COMPLEX PARAMETERS]
+0       TWO_NE_ANC      =       TWO_NE_PRESENT_POP1*RESIZE_ANC output
+1   T_BOT_POP1_BEG =    T_SPL*SCALE_T_BOT
+1   T_BOT_POP1_END  =   T_BOT_POP1_BEG - 100
+1   TWO_NE_BOT_POP1 =   100/SEVERITY_BOT   output
+0   RESIZE_POP1_END =   TWO_NE_BOT_POP1/TWO_NE_PRESENT_POP1 hide
+0   RESIZE_POP1_BEG =   TWO_NE_PRESENT_POP1/TWO_NE_BOT_POP1 hide
