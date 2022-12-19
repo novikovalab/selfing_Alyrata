@@ -8,6 +8,8 @@ CoGe processing: Working with output of Synmap = synteny analysis of online plat
 - step 1: transforming output to separate files containing start and end of each syntenic block, performed on command line.
 - step 2: merging starts and ends to create following file format: chrA, startA, endA, chrB, startB, endB. A and B depict two different genome assemblies.
 - step 3: Visualizing the result in R using the library circlize. 
+
+Demographic_modeling: contains .est and .tpl file for Fastsimcoal, plus input sfs and script used to generate parameter estimates.
 	
   
  
